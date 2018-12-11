@@ -25,6 +25,6 @@ CREATE TABLE DEVICEDATA
     FOREIGN KEY (HardwareNr) REFERENCES DEVICE(HardwareNr)
     );
     
-
+-- Dick's First Push
 
 
