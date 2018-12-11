@@ -26,5 +26,6 @@ CREATE TABLE Devicedata(
     );
     
 -- Dick's First Push
+-- Bjorn's
 
 
