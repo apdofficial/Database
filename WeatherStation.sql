@@ -1,28 +1,28 @@
-DROP DATABASE IF EXISTS WEATHERSTATION;
+DROP DATABASE IF EXISTS Weatherstation;
 
-CREATE DATABASE WEATHERSTATION;
+CREATE DATABASE Weatherstation;
 
-USE WEATHERSTATION;
+USE Weatherstation;
 
 SET time_zone = '+01:00';
 
-CREATE TABLE DEVICE
-	(HardwareNr VARCHAR(30) not null,
-    DeviceName VARCHAR(30) not null,
-    Location VARCHAR(30) not null,
-    primary key ( HardwareNr)
+CREATE TABLE Device(
+    HardwareID VARCHAR(40) not null,
+    DeviceName VARCHAR(40) not null,
+    Location VARCHAR(40) not null,
+    PRIMARY KEY (HardwareID)
     );
 
-CREATE TABLE DEVICEDATA
-	(HardwareNr VARCHAR(30) not null,
+CREATE TABLE Devicedata(
+	HardwareID VARCHAR(40) not null,
     DataNr int default 0,
-    Temperature_1 double(4,1) not null,
-    Temperature_2 double(4,1),
-    Luminosity_1 INT not null,
-    Luminosity_2 INT not null default 200,
+    Temperature double(4,1),
+    Luminosity INT not null,
+    Humidity INT not null,
+    Pressure INT not null ,
     Time_Interval Datetime,
-    primary key ( HardwareNr, DataNr ),
-    FOREIGN KEY (HardwareNr) REFERENCES DEVICE(HardwareNr)
+    PRIMARY KEY (HardwareID, DataNr ),
+    FOREIGN KEY (HardwareID) REFERENCES Device(HardwareID)
     );
     
 
