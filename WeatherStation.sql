@@ -1,9 +1,13 @@
+/**************************************************************
+  Auteur: Group 3
+  Description: Creating 2 Databases. 1 for the devices with the device information and 1 for alle the data received from the devices.
+  Date: 4-12-2018
+  Version: 1.0
+**************************************************************/
+
 DROP DATABASE IF EXISTS Weatherstation;
-
 CREATE DATABASE Weatherstation;
-
 USE Weatherstation;
-
 SET time_zone = '+01:00';
 
 CREATE TABLE Device(
@@ -24,8 +28,3 @@ CREATE TABLE Devicedata(
     PRIMARY KEY (HardwareID, DataNr ),
     FOREIGN KEY (HardwareID) REFERENCES Device(HardwareID)
     );
-    
--- Dick's First Push
--- Bjorn's
-
-
