@@ -15,16 +15,16 @@ CREATE TABLE Device(
 		DeviceName VARCHAR(40) not null,
 		Location VARCHAR(40) not null,
 		PRIMARY KEY (HardwareID)
-    );
+);
 
 CREATE TABLE Devicedata(
 		HardwareID VARCHAR(40) not null,
 		DataNr int default 0,
-		Temperature double(4,1),
-		Luminosity INT not null,
-		Humidity INT not null,
-		Pressure INT not null ,
+		Temperature DOUBLE not null,
+		Humidity DOUBLE not null,
+        Luminosity DOUBLE not null,
+		Pressure DOUBLE not null ,
 		Time_Interval Datetime,
 		PRIMARY KEY (HardwareID, DataNr ),
 		FOREIGN KEY (HardwareID) REFERENCES Device(HardwareID)
-    );
+);
